@@ -108,12 +108,17 @@ export default function Home() {
   });
 
   const handleSelect = (productName: string) => {
-    setForm({ ...form, product: productName });
-    window.scrollTo({ top: 3000, behavior: "smooth" });
-  };
+  setForm({ ...form, product: productName });
 
+  // 自动滚到订单区
+  const orderSection = document.getElementById("order");
+  if (orderSection) {
+    orderSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
   const handleOrder = () => {
-    const text = `Hello Morii Baking Studio!%0A
+   const text = `Hi Morii Baking Studio! 🎂%0A
+I'd like to order a cake:%0A
 Name: ${form.name}%0A
 Product: ${form.product}%0A
 Details: ${form.size}%0A
@@ -145,7 +150,7 @@ Date: ${form.date}%0A`;
       </section>
 
       {/* FEATURED */}
-      <section className="px-6 max-w-6xl mx-auto pb-20">
+     <section id="order" className="px-6 max-w-4xl mx-auto pb-20">
         <h2 className="text-3xl font-semibold text-center mb-10">
           Featured Picks ✨
         </h2>
@@ -266,7 +271,7 @@ Date: ${form.date}%0A`;
               onClick={handleOrder}
               className="bg-black text-white py-3 rounded-xl"
             >
-              Book via WhatsApp 📲
+              Secure Your Cake Slot Now 🎂
             </button>
           </div>
         </div>
