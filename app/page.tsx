@@ -5,21 +5,21 @@ import { useState } from "react";
 const featuredProducts = [
   {
     name: "Custom Birthday Cake",
-    price: "From RM89",
+    price: "From RM58",
     desc: "Soft, cute and custom-made ✨",
-    img: "/cakes/IMG_3603.jpeg",
+    img: "/cakes/cake-1.jpeg",
   },
   {
     name: "Premium Cake",
-    price: "From RM120",
+    price: "From RM118",
     desc: "Elegant & aesthetic 💖",
-    img: "/cakes/IMG_3511.jpeg",
+    img: "/cakes/cake-2.jpeg",
   },
   {
     name: "Cute Character Cake",
-    price: "From RM99",
+    price: "From RM158",
     desc: "Fun & giftable 🎁",
-    img: "/cakes/IMG_3733.jpeg",
+    img: "/cakes/cake-3.jpeg",
   },
 ];
 
@@ -30,71 +30,71 @@ const categories = [
       {
         name: "3D Cakes",
         items: [
-          { img: "/cakes/IMG_3603.jpeg" },
-          { img: "/cakes/IMG_3733.jpeg" },
+          { img: "/cakes/3d-1.jpeg" },
+          { img: "/cakes/3d-2.jpeg" },
         ],
       },
       {
         name: "Korean Minimal Cakes",
         items: [
-          { img: "/cakes/IMG_3278.jpeg" },
-          { img: "/cakes/IMG_3814.jpeg" },
+          { img: "/cakes/korean-1.jpeg" },
+          { img: "/cakes/korean-2.jpeg" },
         ],
       },
       {
         name: "Baby 1st Cakes",
         items: [
-          { img: "/cakes/IMG_2771.jpeg" },
-          { img: "/cakes/IMG_3163.jpeg" },
+          { img: "/cakes/baby-1.jpeg" },
+          { img: "/cakes/baby-2.jpeg" },
         ],
       },
       {
         name: "Wedding Cakes",
-        items: [{ img: "/cakes/IMG_3511.jpeg" }],
+        items: [{ img: "/cakes/wedding-1.pdf" }],
       },
       {
         name: "Cartoon Cakes",
-        items: [{ img: "/cakes/IMG_3733.jpeg" }],
+        items: [{ img: "/cakes/cartoon-1.jpeg" }],
       },
       {
         name: "Goddess Cakes",
-        items: [{ img: "/cakes/IMG_5591.JPG" }],
+        items: [{ img: "/cakes/goddess-1.jpeg" }],
       },
       {
         name: "Parents Cakes",
-        items: [{ img: "/cakes/IMG_3531.jpeg" }],
+        items: [{ img: "/cakes/parent-1.jpeg" }],
       },
-      {
+       {
         name: "Elder Cakes",
-        items: [{ img: "/cakes/IMG_3539.jpeg" }],
+        items: [{ img: "/cakes/elder-1.jpeg" }],
       },
     ],
   },
   {
     title: "Full Moon",
     items: [
-      { img: "/cakes/IMG_3487.jpeg" },
-      { img: "/cakes/IMG_3517.jpeg" },
-      { img: "/cakes/IMG_3531.jpeg" },
-      { img: "/cakes/IMG_3539.jpeg" },
+      { img: "/cakes/fullmoon-1.pdf" },
+      { img: "/cakes/fullmoon-2.jpeg" },
+      { img: "/cakes/fullmoon-3.jpeg" },
+      { img: "/cakes/fullmoon-4.jpeg" },
     ],
   },
   {
     title: "Party",
     items: [
-      { img: "/cakes/IMG_3597.jpeg" },
-      { img: "/cakes/IMG_3603.jpeg" },
-      { img: "/cakes/IMG_3627.jpeg" },
-      { img: "/cakes/IMG_3648.jpeg" },
+      { img: "/cakes/party-1.jpeg" },
+      { img: "/cakes/party-2.jpeg" },
+      { img: "/cakes/party-3.jpeg" },
+      { img: "/cakes/party-4.jpeg" },
     ],
   },
   {
     title: "Cookies",
     items: [
-      { img: "/cakes/IMG_3682.jpeg" },
-      { img: "/cakes/IMG_3729.jpeg" },
-      { img: "/cakes/IMG_3819.jpeg" },
-      { img: "/cakes/IMG_3822.jpeg" },
+      { img: "/cakes/icing-1.jpeg" },
+      { img: "/cakes/icing-2.jpeg" },
+      { img: "/cakes/icing-3.jpeg" },
+      { img: "/cakes/icing-4.jpeg" },
     ],
   },
 ];
