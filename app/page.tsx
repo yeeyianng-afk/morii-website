@@ -170,7 +170,7 @@ Date: ${form.date}%0A`;
         </div>
       </section>
 
-      {/* MENU */}
+{/* MENU */}
 <section className="px-6 max-w-6xl mx-auto pb-20">
   <h2 className="text-3xl font-semibold text-center mb-12">
     Menu Categories
@@ -197,7 +197,8 @@ Date: ${form.date}%0A`;
                       key={idx}
                       src={item.img}
                       alt={group.name}
-                      className="w-full h-56 object-cover rounded-xl"
+                      onClick={() => handleSelect(group.name)}
+                      className="w-full h-56 object-cover rounded-xl cursor-pointer"
                     />
                   ))}
                 </div>
@@ -211,7 +212,8 @@ Date: ${form.date}%0A`;
                 key={idx}
                 src={item.img}
                 alt={category.title}
-                className="w-full h-56 object-cover rounded-xl"
+                onClick={() => handleSelect(category.title)}
+                className="w-full h-56 object-cover rounded-xl cursor-pointer"
               />
             ))}
           </div>
