@@ -1,113 +1,168 @@
-
-  "use client";
+"use client";
 
 import { useState } from "react";
 
-const products = [
+const featuredProducts = [
   {
     name: "Custom Birthday Cake",
-    price: "RM89+",
-    desc: "Fully custom design 🎉",
+    price: "From RM89",
+    desc: "Soft, cute and custom-made ✨",
     img: "/cakes/IMG_3603.jpeg",
   },
   {
-    name: "Korean Minimal Cake",
-    price: "RM79+",
-    desc: "Aesthetic & trending ✨",
-    img: "/cakes/IMG_3278.jpeg",
-  },
-  {
-    name: "Cute Character Cake",
-    price: "RM99+",
-    desc: "Perfect for gifting 🎁",
-    img: "/cakes/IMG_3733.jpeg",
-  },
-  {
-    name: "Premium Celebration Cake",
-    price: "RM120+",
-    desc: "Luxury design 💎",
+    name: "Premium Cake",
+    price: "From RM120",
+    desc: "Elegant & aesthetic 💖",
     img: "/cakes/IMG_3511.jpeg",
   },
   {
-    name: "Signature Morii Cake",
-    price: "RM109+",
-    desc: "Customer favorite 💖",
-    img: "/cakes/IMG_3814.jpeg",
+    name: "Cute Character Cake",
+    price: "From RM99",
+    desc: "Fun & giftable 🎁",
+    img: "/cakes/IMG_3733.jpeg",
+  },
+];
+
+const categories = [
+  {
+    title: "Cakes",
+    groups: [
+      {
+        name: "3D Cakes",
+        items: [
+          { img: "/cakes/IMG_3603.jpeg" },
+          { img: "/cakes/IMG_3733.jpeg" },
+        ],
+      },
+      {
+        name: "Korean Minimal Cakes",
+        items: [
+          { img: "/cakes/IMG_3278.jpeg" },
+          { img: "/cakes/IMG_3814.jpeg" },
+        ],
+      },
+      {
+        name: "Baby 1st Cakes",
+        items: [
+          { img: "/cakes/IMG_2771.jpeg" },
+          { img: "/cakes/IMG_3163.jpeg" },
+        ],
+      },
+      {
+        name: "Wedding Cakes",
+        items: [{ img: "/cakes/IMG_3511.jpeg" }],
+      },
+      {
+        name: "Cartoon Cakes",
+        items: [{ img: "/cakes/IMG_3733.jpeg" }],
+      },
+      {
+        name: "Goddess Cakes",
+        items: [{ img: "/cakes/IMG_5591.JPG" }],
+      },
+      {
+        name: "Parents Cakes",
+        items: [{ img: "/cakes/IMG_3531.jpeg" }],
+      },
+      {
+        name: "Elder Cakes",
+        items: [{ img: "/cakes/IMG_3539.jpeg" }],
+      },
+    ],
   },
   {
-    name: "Exclusive Custom Cake",
-    price: "RM139+",
-    desc: "High-end custom design ✨",
-    img: "/cakes/IMG_5591.JPG",
+    title: "Full Moon",
+    items: [
+      { img: "/cakes/IMG_3487.jpeg" },
+      { img: "/cakes/IMG_3517.jpeg" },
+      { img: "/cakes/IMG_3531.jpeg" },
+      { img: "/cakes/IMG_3539.jpeg" },
+    ],
+  },
+  {
+    title: "Party",
+    items: [
+      { img: "/cakes/IMG_3597.jpeg" },
+      { img: "/cakes/IMG_3603.jpeg" },
+      { img: "/cakes/IMG_3627.jpeg" },
+      { img: "/cakes/IMG_3648.jpeg" },
+    ],
+  },
+  {
+    title: "Cookies",
+    items: [
+      { img: "/cakes/IMG_3682.jpeg" },
+      { img: "/cakes/IMG_3729.jpeg" },
+      { img: "/cakes/IMG_3819.jpeg" },
+      { img: "/cakes/IMG_3822.jpeg" },
+    ],
   },
 ];
 
 export default function Home() {
   const [form, setForm] = useState({
     name: "",
-    cake: "",
+    product: "",
     size: "",
     date: "",
   });
 
+  const handleSelect = (productName: string) => {
+    setForm({ ...form, product: productName });
+    window.scrollTo({ top: 3000, behavior: "smooth" });
+  };
+
   const handleOrder = () => {
     const text = `Hello Morii Baking Studio!%0A
 Name: ${form.name}%0A
-Cake: ${form.cake}%0A
-Size: ${form.size}%0A
-Date: ${form.date}`;
+Product: ${form.product}%0A
+Details: ${form.size}%0A
+Date: ${form.date}%0A`;
 
     window.open(`https://wa.me/601125864168?text=${text}`, "_blank");
   };
 
   return (
     <div className="min-h-screen bg-[#fffaf7] text-gray-800">
-
+      
       {/* HERO */}
-      <section className="text-center py-20 px-4">
-        <h1 className="text-5xl font-bold mb-4">
+      <section className="text-center py-20 px-6">
+        <h1 className="text-5xl font-semibold mb-4">
           Morii Baking Studio 🎂
         </h1>
-        <p className="text-lg mb-6">
-          Custom cakes made for your moments ✨
+        <p className="text-gray-600 mb-4">
+          Not just a cake. It’s your moment ✨
+        </p>
+        <p className="text-pink-400 font-medium mb-6">
+          Limited slots daily — book early!
         </p>
         <button
-          onClick={() => window.scrollTo({ top: 800, behavior: "smooth" })}
-          className="bg-black text-white px-6 py-3 rounded-2xl text-lg"
+          onClick={() => window.scrollTo({ top: 500, behavior: "smooth" })}
+          className="bg-black text-white px-6 py-3 rounded-2xl"
         >
-          Order Now
+          View Menu
         </button>
       </section>
 
-      {/* PRODUCTS */}
-      <section className="px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-10 text-center">
-          Choose Your Cake 🎂
+      {/* FEATURED */}
+      <section className="px-6 max-w-6xl mx-auto pb-20">
+        <h2 className="text-3xl font-semibold text-center mb-10">
+          Featured Picks ✨
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {products.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow hover:scale-105 transition overflow-hidden"
-            >
-              <img
-                src={item.img}
-                className="w-full h-64 object-cover"
-              />
-
+          {featuredProducts.map((item, index) => (
+            <div key={index} className="bg-white rounded-3xl shadow">
+              <img src={item.img} className="w-full h-72 object-cover" />
               <div className="p-5">
-                <h3 className="text-xl font-bold">{item.name}</h3>
+                <h3 className="text-xl font-semibold">{item.name}</h3>
                 <p className="text-gray-500 text-sm">{item.desc}</p>
-                <p className="mt-2 font-semibold">{item.price}</p>
-
+                <p className="mt-2 font-medium">{item.price}</p>
                 <button
-                  onClick={() =>
-                    setForm({ ...form, cake: item.name })
-                  }
+                  onClick={() => handleSelect(item.name)}
                   className="mt-4 w-full bg-black text-white py-2 rounded-xl"
                 >
-                  Select This 🎂
+                  Select This
                 </button>
               </div>
             </div>
@@ -115,65 +170,101 @@ Date: ${form.date}`;
         </div>
       </section>
 
-      {/* TRUST SECTION */}
-      <section className="py-16 text-center">
-        <h2 className="text-2xl font-semibold mb-4">
-          Why Choose Morii? 💖
+      {/* MENU */}
+      <section className="px-6 max-w-6xl mx-auto pb-20">
+        <h2 className="text-3xl font-semibold text-center mb-12">
+          Menu Categories
         </h2>
-        <p>✔ 100+ Happy Customers</p>
-        <p>✔ Custom Design Available</p>
-        <p>✔ Premium Ingredients</p>
+
+        <div className="space-y-16">
+          {categories.map((category, index) => (
+            <div key={index}>
+              <h3 className="text-2xl font-semibold mb-6">
+                {category.title}
+              </h3>
+
+              {"groups" in category ? (
+                <div className="space-y-10">
+                  {category.groups.map((group, i) => (
+                    <div key={i}>
+                      <h4 className="text-lg font-medium mb-3 text-gray-600">
+                        {group.name}
+                      </h4>
+
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {group.items.map((item, idx) => (
+                          <img
+                            key={idx}
+                            src={item.img}
+                            className="w-full h-56 object-cover rounded-xl"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {category.items.map((item, idx) => (
+                    <img
+                      key={idx}
+                      src={item.img}
+                      className="w-full h-56 object-cover rounded-xl"
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* ORDER FORM */}
-      <section className="py-16 px-6 bg-white text-center">
-        <h2 className="text-3xl font-semibold mb-6">
-          Order Your Cake 🎂
-        </h2>
+      {/* ORDER */}
+      <section className="px-6 max-w-4xl mx-auto pb-20">
+        <div className="bg-white p-8 rounded-3xl shadow">
+          <h2 className="text-2xl font-semibold text-center mb-6">
+            Order Your Cake 🎂
+          </h2>
 
-        <div className="max-w-md mx-auto space-y-4">
+          <div className="grid gap-4">
+            <input
+              placeholder="Your Name"
+              className="p-3 border rounded-xl"
+              onChange={(e) =>
+                setForm({ ...form, name: e.target.value })
+              }
+            />
 
-          <input
-            placeholder="Your Name"
-            className="w-full p-3 border rounded-xl"
-            onChange={(e) =>
-              setForm({ ...form, name: e.target.value })
-            }
-          />
+            <input
+              placeholder="Selected Product"
+              value={form.product}
+              readOnly
+              className="p-3 border rounded-xl bg-gray-50"
+            />
 
-          <input
-            placeholder="Selected Cake"
-            value={form.cake}
-            readOnly
-            className="w-full p-3 border rounded-xl bg-gray-100"
-          />
+            <input
+              placeholder="Size / Details"
+              className="p-3 border rounded-xl"
+              onChange={(e) =>
+                setForm({ ...form, size: e.target.value })
+              }
+            />
 
-          <select
-            className="w-full p-3 border rounded-xl"
-            onChange={(e) =>
-              setForm({ ...form, size: e.target.value })
-            }
-          >
-            <option>Select Size</option>
-            <option>6 inch</option>
-            <option>8 inch</option>
-            <option>10 inch</option>
-          </select>
+            <input
+              type="date"
+              className="p-3 border rounded-xl"
+              onChange={(e) =>
+                setForm({ ...form, date: e.target.value })
+              }
+            />
 
-          <input
-            type="date"
-            className="w-full p-3 border rounded-xl"
-            onChange={(e) =>
-              setForm({ ...form, date: e.target.value })
-            }
-          />
-
-          <button
-            onClick={handleOrder}
-            className="w-full bg-black text-white py-4 rounded-2xl text-lg"
-          >
-            Confirm Order via WhatsApp 📲
-          </button>
+            <button
+              onClick={handleOrder}
+              className="bg-black text-white py-3 rounded-xl"
+            >
+              Book via WhatsApp 📲
+            </button>
+          </div>
         </div>
       </section>
 
