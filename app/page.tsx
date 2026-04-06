@@ -171,53 +171,55 @@ Date: ${form.date}%0A`;
       </section>
 
       {/* MENU */}
-      <section className="px-6 max-w-6xl mx-auto pb-20">
-        <h2 className="text-3xl font-semibold text-center mb-12">
-          Menu Categories
-        </h2>
+<section className="px-6 max-w-6xl mx-auto pb-20">
+  <h2 className="text-3xl font-semibold text-center mb-12">
+    Menu Categories
+  </h2>
 
-        <div className="space-y-16">
-          {categories.map((category, index) => (
-            <div key={index}>
-              <h3 className="text-2xl font-semibold mb-6">
-                {category.title}
-              </h3>
+  <div className="space-y-16">
+    {categories.map((category, index) => (
+      <div key={index}>
+        <h3 className="text-2xl font-semibold mb-6">
+          {category.title}
+        </h3>
 
-              {"groups" in category ? (
-                <div className="space-y-10">
-                  {category.groups.map((group, i) => (
-                    <div key={i}>
-                      <h4 className="text-lg font-medium mb-3 text-gray-600">
-                        {group.name}
-                      </h4>
+        {category.groups ? (
+          <div className="space-y-10">
+            {category.groups.map((group, i) => (
+              <div key={i}>
+                <h4 className="text-lg font-medium mb-3 text-gray-600">
+                  {group.name}
+                </h4>
 
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {group.items.map((item, idx) => (
-                          <img
-                            key={idx}
-                            src={item.img}
-                            className="w-full h-56 object-cover rounded-xl"
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {category.items.map((item, idx) => (
+                  {group.items.map((item, idx) => (
                     <img
                       key={idx}
                       src={item.img}
+                      alt={group.name}
                       className="w-full h-56 object-cover rounded-xl"
                     />
                   ))}
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {category.items?.map((item, idx) => (
+              <img
+                key={idx}
+                src={item.img}
+                alt={category.title}
+                className="w-full h-56 object-cover rounded-xl"
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* ORDER */}
       <section className="px-6 max-w-4xl mx-auto pb-20">
