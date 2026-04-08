@@ -4,19 +4,19 @@ import { useState } from "react";
 
 const featuredProducts = [
   {
-    name: "4inchCustom Birthday Cake",
+    name: "4 Inch Custom Birthday Cake",
     price: "From RM58",
     desc: "Soft, cute and custom-made ✨",
     img: "/cakes/cake-1.jpeg",
   },
   {
-    name: "6inch Custom Birthday Cake",
+    name: "6 Inch Custom Birthday Cake",
     price: "From RM118",
     desc: "Soft, cute and custom-made ✨",
     img: "/cakes/cake-2.jpeg",
   },
   {
-    name: "8inchCustom Birthday Cake",
+    name: "8 Inch Custom Birthday Cake",
     price: "From RM158",
     desc: "Soft, cute and custom-made ✨",
     img: "/cakes/cake-3.jpeg",
@@ -25,7 +25,7 @@ const featuredProducts = [
     name: "Premium Cake",
     price: "From RM188",
     desc: "Elegant & aesthetic 💖",
-    img: "/cakes/premium-1.jpeg",
+    img: "/cakes/premiun-1.jpeg",
   },
 ];
 
